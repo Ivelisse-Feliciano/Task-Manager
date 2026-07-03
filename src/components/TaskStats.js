@@ -1,6 +1,6 @@
 // ══════════════════════════════════════════════════════
 // COMPONENT: TaskStats
-// PURPOSE: Displays live task counts and the button that
+// PURPOSE: This section is where it shows live task counts and the button that
 // clears all completed tasks.
 // TYPE: Client Component — uses a button click event.
 // PROPS: total, active, completed, onClearCompleted
@@ -11,7 +11,7 @@
 export default function TaskStats({ total, active, completed, onClearCompleted }) {
   return (
     <aside className="rounded-3xl bg-slate-900 p-5">
-      <h2 className="mb-4 text-xl font-bold">Task Stats</h2>
+      <h2 className="mb-4 text-xl font-bold">Dashboard</h2>
 
       <div className="grid gap-3">
         <div className="rounded-2xl bg-slate-950 p-4">

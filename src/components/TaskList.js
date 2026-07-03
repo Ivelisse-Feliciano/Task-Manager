@@ -43,13 +43,14 @@ export default function TaskList({
         // compare the new virtual DOM with the previous one.
         tasks.map((task) => (
           <TaskCard
-            key={task.id}
-            id={task.id}
-            title={task.title}
-            done={task.done}
-            onToggle={onToggle}
-            onDelete={onDelete}
-          />
+  key={task.id}
+  id={task.id}
+  title={task.title}
+  category={task.category}
+  done={task.done}
+  onToggle={onToggle}
+  onDelete={onDelete}
+/>
         ))
       )}
     </div>

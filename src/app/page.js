@@ -13,7 +13,7 @@ import TaskBoard from '@/components/TaskBoard';
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-8 text-white">
+    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black px-4 py-8 text-white">
       <TaskBoard />
     </main>
   );

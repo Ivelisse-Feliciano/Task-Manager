@@ -161,8 +161,8 @@ export default function TaskBoard() {
                   onClick={() => setFilter(option)}
                   className={
                     isSelected
-                      ? 'rounded-full bg-cyan-400 px-4 py-2 font-bold text-slate-950'
-                      : 'rounded-full bg-slate-800 px-4 py-2 font-bold text-slate-300 hover:bg-slate-700'
+                      ? 'rounded-full bg-rose-400 px-4 py-2 font-bold text-slate-950'
+                      : 'rounded-full bg-rose-800 px-4 py-2 font-bold text-slate-300 hover:bg-slate-700'
                   }
                 >
                   {option.toUpperCase()}

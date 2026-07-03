@@ -108,7 +108,7 @@ export default function TaskBoard() {
         <h1 className="text-4xl font-bold">Ivy’s Daily Task Manager</h1>
 
         <p className="mt-3 text-slate-300">
-          Organize tasks, track progress, and keep everything saved after refresh.
+          This task Manager is to help me organize tasks, track progress, and keep everything saved in one place.
         </p>
       </div>
 

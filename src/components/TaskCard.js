@@ -46,13 +46,13 @@ export default function TaskCard({ id, title, done, onToggle, onDelete }) {
 
         <div className="flex gap-2">
           {/* TaskBoard owns the task state. This button sends the task id
-              upward so TaskBoard can toggle the correct item with map(). */}
-          <button
-            onClick={() => onToggle(id)}
-            className="rounded-lg bg-slate-800 px-3 py-2 text-sm font-bold text-slate-200 hover:bg-slate-700"
-          >
-            Toggle
-          </button>
+              upward so TaskBoard can toggle from done to undone the correct item with map(). */}
+         <button
+  onClick={() => onToggle(id)}
+  className="rounded-lg bg-slate-800 px-3 py-2 text-sm font-bold text-slate-200 hover:bg-slate-700"
+>
+  {done ? "Undo" : "Done"}
+</button>
 
           {/* Delete works the same way: this child does not remove the task
               directly. It asks TaskBoard to remove this id from state. */}

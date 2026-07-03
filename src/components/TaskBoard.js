@@ -63,12 +63,13 @@ export default function TaskBoard() {
       ? tasks.filter((task) => task.done)
       : tasks.filter((task) => !task.done);
 
-  function handleAddTask(title) {
-    const newTask = {
-      id: crypto.randomUUID(),
-      title,
-      done: false,
-    };
+  function handleAddTask(title, category) {
+   const newTask = {
+  id: crypto.randomUUID(),
+  title,
+  category,
+  done: false,
+};
 
     // The spread operator creates a new array instead of changing
     // the existing tasks array. React depends on this new reference

@@ -33,20 +33,34 @@ export default function AddTaskForm({ onAdd }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mb-6 flex flex-col gap-3 sm:flex-row">
-      <input
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Add a new task..."
-        className="flex-1 rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-cyan-400"
-      />
+    <form
+  onSubmit={handleSubmit}
+  className="mb-6 flex flex-col gap-3 sm:flex-row"
+>
+  <input
+    value={title}
+    onChange={(e) => setTitle(e.target.value)}
+    placeholder="Add a new task..."
+    className="flex-1 rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-cyan-400"
+  />
 
-      <button
-        type="submit"
-        className="rounded-xl bg-cyan-400 px-6 py-3 font-bold text-slate-950 transition hover:bg-cyan-300"
-      >
-        Add Task
-      </button>
-    </form>
-  );
-}
+  {/* Controlled select menu. The selected category lives in state
+      until the user submits the form. */}
+  <select
+    value={category}
+    onChange={(e) => setCategory(e.target.value)}
+    className="rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white"
+  >
+    <option value="Personal">🏠 Personal</option>
+    <option value="Work">💼 Work</option>
+    <option value="Church">⛪ Church</option>
+    <option value="School">📚 School</option>
+  </select>
+
+  <button
+    type="submit"
+    className="rounded-xl bg-cyan-400 px-6 py-3 font-bold text-slate-950 transition hover:bg-cyan-300"
+  >
+    Add Task
+  </button>
+</form>

@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react';
 import AddTaskForm from './AddTaskForm';
 import TaskList from './TaskList';
 import TaskStats from './TaskStats';
+import Image from 'next/image';
 
 export default function TaskBoard() {
   // tasks must be stored in state because the list changes when the
@@ -100,7 +101,7 @@ export default function TaskBoard() {
 
   return (
     <section className="mx-auto max-w-5xl">
-      <div className="mb-8 rounded-3xl bg-slate-900 p-6 shadow-xl">
+      {/* <div className="mb-8 rounded-3xl bg-slate-900 p-6 shadow-xl">
         <p className="mb-2 text-sm font-bold uppercase tracking-widest text-cyan-400">
           Project and Homework Task Manager
         </p>
@@ -110,8 +111,31 @@ export default function TaskBoard() {
         <p className="mt-3 text-slate-300">
           This task Manager is to help me organize tasks, track progress, and keep everything saved in one place.
         </p>
-      </div>
+      </div> */}
+    <div className="mb-8 overflow-hidden rounded-3xl border border-rose-300/20 bg-slate-900 shadow-2xl shadow-black/40">
+  <Image
+    src="/header-dashboard.png"
+    alt="Personal Project Task Manager dashboard banner"
+    width={1600}
+    height={900}
+    priority
+    className="h-auto w-full object-cover"
+  />
+</div>
 
+<div className="mb-8 rounded-3xl border border-rose-300/20 bg-slate-900/90 p-6 shadow-xl">
+  <p className="text-sm font-semibold uppercase tracking-[0.35em] text-rose-300">
+    Plan. Focus. Track. Accomplish.
+  </p>
+
+  <h1 className="mt-3 text-4xl font-bold text-white">
+    Project Task Manager
+  </h1>
+
+  <p className="mt-3 text-slate-300">
+    A personalized workspace for organizing priorities, tracking progress, and staying focused.
+  </p>
+</div>
       <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
         <TaskStats
           total={totalTasks}

@@ -12,10 +12,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import AddTaskForm from './AddTaskForm';
 import TaskList from './TaskList';
 import TaskStats from './TaskStats';
-import Image from 'next/image';
 import CurrentDateTime from "./CurrentDateTime";
 
 export default function TaskBoard() {
@@ -124,6 +124,7 @@ export default function TaskBoard() {
   />
 </div>
 
+<CurrentDateTime />
 <div className="mb-8 rounded-3xl border border-rose-300/20 bg-slate-900/90 p-6 shadow-xl">
   <p className="text-sm font-semibold uppercase tracking-[0.35em] text-rose-300">
     Plan. Focus. Track. Accomplish.

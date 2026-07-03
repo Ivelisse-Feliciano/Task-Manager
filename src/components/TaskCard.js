@@ -13,7 +13,7 @@
 
 'use client';
 
-export default function TaskCard({ id, title, done, onToggle, onDelete }) {
+export default function TaskCard({ id, title, category, done, onToggle, onDelete }) {
   // These class names are derived from done instead of stored in state.
   // The visual design should always match the real task status.
   const cardClass = done
@@ -29,6 +29,19 @@ export default function TaskCard({ id, title, done, onToggle, onDelete }) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className={titleClass}>{title}</p>
+          <span
+  className={`mt-2 inline-block rounded-full px-3 py-1 text-xs font-bold text-white ${
+    category === 'Work'
+      ? 'bg-blue-500'
+      : category === 'Church'
+      ? 'bg-purple-500'
+      : category === 'School'
+      ? 'bg-green-500'
+      : 'bg-rose-500'
+  }`}
+>
+  {category || 'Personal'}
+</span>
 
           {/* Conditional render:
               The badge text and color change based on done so the user

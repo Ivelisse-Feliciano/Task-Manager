@@ -16,40 +16,29 @@ import Image from 'next/image';
 import AddTaskForm from './AddTaskForm';
 import TaskList from './TaskList';
 import TaskStats from './TaskStats';
-import CurrentDateTime from "./CurrentDateTime";
+import CurrentDateTime from './CurrentDateTime';
 
 export default function TaskBoard() {
-  // tasks must be stored in state because the list changes when the
-  // user adds, deletes, toggles, or clears tasks. React re-renders
-  // the page when state changes, so the UI stays updated.
-  const [tasks, setTasks] = useState(() => {
-    // Next.js can render components before the browser is available.
-    // localStorage only exists in the browser, so this guard prevents
-    // errors during server-side rendering.
-    if (typeof window === 'undefined') return [];
-
-    const savedTasks = localStorage.getItem('tasks');
-
-    // If saved tasks exist, restore them. Otherwise, start with
-    // an empty array so the app has a safe default task list.
-    return savedTasks ? JSON.parse(savedTasks) : [];
-  });
-
-  // filter is state because the user can change it independently
-  // from the task list. Changing the filter should not delete or
-  // edit tasks; it only changes which tasks are displayed.
+  const [tasks, setTasks] = useState([]);
+  const [hasLoaded, setHasLoaded] = useState(false);
   const [filter, setFilter] = useState('all');
 
-  // This effect syncs React state with localStorage, which is an
-  // external browser system. The dependency array is [tasks] because
-  // we only need to save again when the task list changes.
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
+    const savedTasks = localStorage.getItem('tasks');
 
-  // These counts are derived values. They are calculated from tasks
-  // instead of stored in separate state because storing them separately
-  // could create bugs if the counts ever got out of sync with the list.
+    if (savedTasks) {
+      setTasks(JSON.parse(savedTasks));
+    }
+
+    setHasLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (hasLoaded) {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+  }, [tasks, hasLoaded]);
+
   const totalTasks = tasks.length;
   const completedTasks = tasks.filter((task) => task.done).length;
   const activeTasks = tasks.filter((task) => !task.done).length;

@@ -16,6 +16,7 @@ import AddTaskForm from './AddTaskForm';
 import TaskList from './TaskList';
 import TaskStats from './TaskStats';
 import Image from 'next/image';
+import CurrentDateTime from "./CurrentDateTime";
 
 export default function TaskBoard() {
   // tasks must be stored in state because the list changes when the

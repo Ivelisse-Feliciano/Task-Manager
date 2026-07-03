@@ -15,12 +15,12 @@ export default function TaskStats({ total, active, completed, onClearCompleted }
 
       <div className="grid gap-3">
         <div className="rounded-2xl bg-slate-950 p-4">
-          <p className="text-sm text-slate-400">Total Tasks</p>
+          <p className="text-sm text-slate-400">Total Tasks Left</p>
           <p className="text-3xl font-bold text-white">{total}</p>
         </div>
 
         <div className="rounded-2xl bg-slate-950 p-4">
-          <p className="text-sm text-slate-400">Active</p>
+          <p className="text-sm text-slate-400">Active Tasks</p>
           <p className="text-3xl font-bold text-amber-300">{active}</p>
         </div>
 

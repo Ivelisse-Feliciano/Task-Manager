@@ -1,6 +1,6 @@
 // ══════════════════════════════════════════════════════
 // COMPONENT: TaskBoard
-// PURPOSE: This is the main “brain” of the task manager.
+// PURPOSE: This is the main area and face of the task manager.
 // It owns the task list, filter choice, and all functions
 // that change task data. Child components receive data
 // and send user actions back up through callback props.
@@ -102,10 +102,10 @@ export default function TaskBoard() {
     <section className="mx-auto max-w-5xl">
       <div className="mb-8 rounded-3xl bg-slate-900 p-6 shadow-xl">
         <p className="mb-2 text-sm font-bold uppercase tracking-widest text-cyan-400">
-          Module 10 Task Manager
+          Project and Homework Task Manager
         </p>
 
-        <h1 className="text-4xl font-bold">Ivy’s Task Command Center</h1>
+        <h1 className="text-4xl font-bold">Ivy’s Daily Task Manager</h1>
 
         <p className="mt-3 text-slate-300">
           Organize tasks, track progress, and keep everything saved after refresh.

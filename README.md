@@ -20,25 +20,39 @@ The Business Productivity Dashboard is a web application built with Next.js and 
 
 ## Running the Project
 
-### Clone the repository
+## Running the Project
+
+### Live Demo
+
+The application is deployed on Vercel and can be accessed here:
+
+**https://ivydashboard.vercel.app/**
+
+No installation is required to explore the application.
+
+---
+
+### Run Locally
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/Ivelisse-Feliciano/task-manager.git
 ```
 
-### Navigate to the project
+Navigate to the project folder:
 
 ```bash
 cd task-manager
 ```
 
-### Install dependencies
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Start the development server
+Start the development server:
 
 ```bash
 npm run dev
@@ -50,7 +64,7 @@ Open your browser and navigate to:
 http://localhost:3000
 ```
 
----
+
 
 ## What I Learned
 

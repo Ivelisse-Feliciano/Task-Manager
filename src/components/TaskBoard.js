@@ -161,15 +161,100 @@ export default function TaskBoard() {
                 </button>
               );
             })}
-          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+  <div className="rounded-2xl border border-slate-700 bg-slate-950 p-4">
+    <div className="mb-4 flex items-center justify-between">
+      <h2 className="text-xl font-bold text-white">
+        💼 Work
+      </h2>
 
-          <TaskList
-            tasks={visibleTasks}
-            filter={filter}
-            onToggle={handleToggleTask}
-            onDelete={handleDeleteTask}
-          />
-        </div>
+      <span className="rounded-full bg-rose-300 px-3 py-1 text-sm font-bold text-slate-950">
+        {workTasks.length}
+      </span>
+    </div>
+
+    <TaskList
+      tasks={workTasks}
+      filter={filter}
+      onToggle={handleToggleTask}
+      onDelete={handleDeleteTask}
+    />
+  </div>
+
+  <div className="rounded-2xl border border-slate-700 bg-slate-950 p-4">
+    <div className="mb-4 flex items-center justify-between">
+      <h2 className="text-xl font-bold text-white">
+        📚 School
+      </h2>
+
+      <span className="rounded-full bg-rose-300 px-3 py-1 text-sm font-bold text-slate-950">
+        {schoolTasks.length}
+      </span>
+    </div>
+
+    <TaskList
+      tasks={schoolTasks}
+      filter={filter}
+      onToggle={handleToggleTask}
+      onDelete={handleDeleteTask}
+    />
+  </div>
+
+  <div className="rounded-2xl border border-slate-700 bg-slate-950 p-4">
+    <div className="mb-4 flex items-center justify-between">
+      <h2 className="text-xl font-bold text-white">
+        ⛪ Church
+      </h2>
+
+      <span className="rounded-full bg-rose-300 px-3 py-1 text-sm font-bold text-slate-950">
+        {churchTasks.length}
+      </span>
+    </div>
+
+    <TaskList
+      tasks={churchTasks}
+      filter={filter}
+      onToggle={handleToggleTask}
+      onDelete={handleDeleteTask}
+    />
+  </div>
+
+  <div className="rounded-2xl border border-slate-700 bg-slate-950 p-4">
+    <div className="mb-4 flex items-center justify-between">
+      <h2 className="text-xl font-bold text-white">
+        🏠 Personal
+      </h2>
+
+      <span className="rounded-full bg-rose-300 px-3 py-1 text-sm font-bold text-slate-950">
+        {personalTasks.length}
+      </span>
+    </div>
+
+    <TaskList
+      tasks={personalTasks}
+      filter={filter}
+      onToggle={handleToggleTask}
+      onDelete={handleDeleteTask}
+    />
+  </div>
+</div>
+
+const workTasks = visibleTasks.filter(
+  (task) => task.category === 'Work'
+);
+
+const schoolTasks = visibleTasks.filter(
+  (task) => task.category === 'School'
+);
+
+const churchTasks = visibleTasks.filter(
+  (task) => task.category === 'Church'
+);
+
+const personalTasks = visibleTasks.filter(
+  (task) => task.category === 'Personal'
+);
+
       </div>
     </section>
   );

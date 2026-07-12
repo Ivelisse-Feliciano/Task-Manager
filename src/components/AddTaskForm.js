@@ -3,7 +3,7 @@
 // ══════════════════════════════════════════════════════
 // COMPONENT: AddTaskForm
 // PURPOSE: Provides a controlled form where the user types
-// a new task and selects a category.
+// a new task, selects a category, and chooses a due date.
 // TYPE: Client Component — uses useState and form events.
 // PROPS: onAdd — callback from TaskBoard used to add a task.
 // ══════════════════════════════════════════════════════
@@ -20,16 +20,17 @@ export default function AddTaskForm({ onAdd }) {
 
     if (!title.trim()) return;
 
-    onAdd(title.trim(), category);
+    onAdd(title.trim(), category, dueDate);
 
     setTitle('');
     setCategory('Personal');
+    setDueDate('');
   }
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="mb-6 flex flex-col gap-3 sm:flex-row"
+      className="mb-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
     >
       <input
         value={title}
@@ -48,6 +49,13 @@ export default function AddTaskForm({ onAdd }) {
         <option value="Church">⛪ Church</option>
         <option value="School">📚 School</option>
       </select>
+
+      <input
+        type="date"
+        value={dueDate}
+        onChange={(e) => setDueDate(e.target.value)}
+        className="rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white"
+      />
 
       <button
         type="submit"

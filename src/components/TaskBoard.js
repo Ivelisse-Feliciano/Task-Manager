@@ -56,16 +56,17 @@ export default function TaskBoard() {
     (task) => task.category === 'Personal'
   );
 
-  function handleAddTask(title, category) {
-    const newTask = {
-      id: crypto.randomUUID(),
-      title,
-      category,
-      done: false,
-    };
+function handleAddTask(title, category, dueDate) {
+  const newTask = {
+    id: crypto.randomUUID(),
+    title,
+    category,
+    dueDate,
+    done: false,
+  };
 
-    setTasks((currentTasks) => [...currentTasks, newTask]);
-  }
+  setTasks((currentTasks) => [...currentTasks, newTask]);
+}
 
   function handleToggleTask(id) {
     setTasks((currentTasks) =>

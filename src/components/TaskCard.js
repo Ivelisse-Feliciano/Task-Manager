@@ -1,12 +1,5 @@
 'use client';
 
-// ══════════════════════════════════════════════════════
-// COMPONENT: TaskCard
-// PURPOSE: Displays one task row with its title, due date,
-// category, status, toggle button, and delete button.
-// TYPE: Client Component — uses click events.
-// ══════════════════════════════════════════════════════
-
 export default function TaskCard({
   id,
   title,

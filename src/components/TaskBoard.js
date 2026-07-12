@@ -12,6 +12,7 @@ export default function TaskBoard() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [filter, setFilter] = useState('all');
 
+
   useEffect(() => {
     const savedTasks = localStorage.getItem('tasks');
 
@@ -32,6 +33,7 @@ export default function TaskBoard() {
   const completedTasks = tasks.filter((task) => task.done).length;
   const activeTasks = tasks.filter((task) => !task.done).length;
 
+
   const visibleTasks =
     filter === 'all'
       ? tasks
@@ -40,6 +42,19 @@ export default function TaskBoard() {
       : tasks.filter((task) => !task.done);
 
   // These must be above the return statement.
+  const allWorkTasks = tasks.filter((task) => task.category === 'Work');
+const allSchoolTasks = tasks.filter((task) => task.category === 'School');
+const allChurchTasks = tasks.filter((task) => task.category === 'Church');
+const allPersonalTasks = tasks.filter(
+  (task) => task.category === 'Personal'
+);
+
+const workCompleted = allWorkTasks.filter((task) => task.done).length;
+const schoolCompleted = allSchoolTasks.filter((task) => task.done).length;
+const churchCompleted = allChurchTasks.filter((task) => task.done).length;
+const personalCompleted = allPersonalTasks.filter(
+  (task) => task.done
+).length;
   const workTasks = visibleTasks.filter(
     (task) => task.category === 'Work'
   );
@@ -230,6 +245,6 @@ function handleAddTask(title, category, dueDate) {
           </div>
         </div>
       </div>
-    </section>
+    </section>  
   );
 }

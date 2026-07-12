@@ -13,6 +13,7 @@ import { useState } from 'react';
 export default function AddTaskForm({ onAdd }) {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Personal');
+  const [dueDate, setDueDate] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();

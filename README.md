@@ -20,7 +20,7 @@ The Business Productivity Dashboard is a web application built with Next.js and 
 
 ## Running the Project
 
-## Running the Project
+
 
 ### Live Demo
 
